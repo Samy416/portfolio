@@ -1,3 +1,15 @@
+// Kinetic word-reveal (hero name)
+const heroName = document.getElementById('heroName');
+if (heroName) {
+  const words = heroName.textContent.trim().split(/\s+/);
+  heroName.innerHTML = words
+    .map((word, i) => `<span class="kw"><span class="kw__i" style="--kw-delay:${i * 0.08}s">${word}</span></span>`)
+    .join(' ');
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => heroName.classList.add('is-in'));
+  });
+}
+
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
