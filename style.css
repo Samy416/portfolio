@@ -805,7 +805,8 @@ button:focus-visible{
 /* ---------- Print ---------- */
 @media print{
   .site-header, .site-footer, .back-to-top, .scroll-progress, .skip-link,
-  .noise-bg, .hero-actions .btn-ghost, .hero-badges, .status-line{
+  .noise-bg, .hero-actions .btn-ghost, .hero-badges, .status-line,
+  .page-fade, .nav-indicator{
     display: none !important;
   }
   body{ background: #fff; color: #111; }
@@ -816,10 +817,19 @@ button:focus-visible{
     backdrop-filter: none;
     box-shadow: none;
   }
+  .glass-card::before{ display: none !important; }
   .section--feature{ background: #fff; border-color: #ccc; }
-  .hero{ padding: 20px 0; }
+  .hero{ padding: 20px 0; transform: none !important; }
+
+  /* force every scroll/hover-triggered animation to its final, visible state */
   .reveal{ opacity: 1 !important; transform: none !important; }
   .kw__i{ opacity: 1 !important; transform: none !important; }
+  .skill-card li, .timeline-content ul li{ opacity: 1 !important; transform: none !important; }
+  .timeline-marker{ transform: scale(1) !important; }
+  .eyebrow::before{ width: 26px !important; }
+  .timeline::before{ display: none !important; }
+  .timeline{ border-left: 1px solid #ccc; }
+
   .video-embed{ display: none; }
   .print-only{ display: block; color: #111; font-size: .9rem; margin-top: 12px; }
   .btn-primary{
