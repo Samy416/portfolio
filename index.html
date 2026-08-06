@@ -49,6 +49,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
@@ -74,6 +75,7 @@
       <li><a href="#ai-work">AI Work</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
+      <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
     </ul>
   </nav>
 </header>
@@ -102,7 +104,7 @@
   </section>
 
   <section id="about" class="section container">
-    <span class="section-index reveal">(01)</span>
+    <span class="section-index reveal" aria-hidden="true">(01)</span>
     <h2 class="section-title reveal">About</h2>
     <div class="about-grid">
       <p class="lead reveal">
@@ -122,7 +124,7 @@
   </section>
 
   <section id="skills" class="section container">
-    <span class="section-index reveal">(02)</span>
+    <span class="section-index reveal" aria-hidden="true">(02)</span>
     <h2 class="section-title reveal">Skills</h2>
     <div class="skills-grid">
 
@@ -146,6 +148,8 @@
           <li>Text-to-speech &amp; voice synthesis</li>
           <li>AI image generation</li>
           <li>ffmpeg video assembly</li>
+          <li>Website design &amp; front-end development</li>
+          <li>Responsive &amp; accessible design</li>
         </ul>
       </div>
 
@@ -175,7 +179,7 @@
   </section>
 
   <section id="experience" class="section container">
-    <span class="section-index reveal">(03)</span>
+    <span class="section-index reveal" aria-hidden="true">(03)</span>
     <h2 class="section-title reveal">Experience</h2>
 
     <div class="timeline">
@@ -223,6 +227,7 @@
             <li>Built automated systems that turn an idea into finished educational content and distribute it across social platforms, the kind of production work that used to need a full team.</li>
             <li>Extended the same systems-thinking beyond content: designing automation that supports day-to-day growth for small creators and businesses.</li>
             <li>Kept a human review step at the center of the process, so speed never comes at the cost of accuracy or quality.</li>
+            <li>Designed and built the web interfaces that run alongside it, from an internal review dashboard to this site.</li>
           </ul>
           <a class="timeline-link" href="#ai-work">More on this below ↓</a>
         </div>
@@ -262,7 +267,7 @@
 
   <section id="ai-work" class="section--feature">
     <div class="container">
-      <span class="section-index reveal">(04)</span>
+      <span class="section-index reveal" aria-hidden="true">(04)</span>
       <h2 class="section-title reveal">Why I Build AI Systems</h2>
       <p class="lead reveal">
         Outside of work, I build systems that turn an idea into finished educational content and get it in
@@ -279,8 +284,11 @@
       <div class="showcase reveal">
         <p class="eyebrow">Example</p>
         <h3 class="showcase-title">Why Your Brain Edits Your Day Overnight</h3>
-        <div class="video-embed glass-card">
-          <iframe src="https://www.youtube.com/embed/pyfgws_NGvw" title="Why Your Brain Edits Your Day Overnight" loading="lazy" allowfullscreen></iframe>
+        <div class="video-embed glass-card" id="videoEmbed" data-video-id="pyfgws_NGvw" data-video-title="Why Your Brain Edits Your Day Overnight">
+          <img class="video-thumb" src="https://img.youtube.com/vi/pyfgws_NGvw/hqdefault.jpg" alt="Thumbnail for the video: Why Your Brain Edits Your Day Overnight" loading="lazy">
+          <button class="video-play-btn" type="button" aria-label="Play video: Why Your Brain Edits Your Day Overnight">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </button>
         </div>
         <p class="showcase-caption">One video from the educational science channel this system produces, researched, scripted, voiced, and assembled through the same pipeline described here.</p>
         <p class="print-only">Watch: https://www.youtube.com/watch?v=pyfgws_NGvw</p>
@@ -302,12 +310,17 @@
           <p>Automation speeds up the work, it doesn't replace judgment. Nothing goes out until it's been
           checked for accuracy and quality.</p>
         </div>
+        <div class="ai-detail glass-card">
+          <h4>This site, too</h4>
+          <p>The design, animation, accessibility, and SEO behind the page you're reading right now, built
+          and maintained the same way: ship it, then keep refining it.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="education" class="section container">
-    <span class="section-index reveal">(05)</span>
+    <span class="section-index reveal" aria-hidden="true">(05)</span>
     <h2 class="section-title reveal">Education</h2>
     <div class="edu-list">
       <div class="edu-item glass-card reveal">
@@ -322,7 +335,7 @@
   </section>
 
   <section id="contact" class="section container contact-section">
-    <span class="section-index reveal">(06)</span>
+    <span class="section-index reveal" aria-hidden="true">(06)</span>
     <h2 class="section-title reveal">Let's Connect</h2>
     <p class="lead reveal">
       Open to roles in planning, research, or anywhere a mix of technical curiosity and clear
@@ -342,6 +355,6 @@
 
 <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
