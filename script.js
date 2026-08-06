@@ -119,6 +119,39 @@ if (!prefersReducedMotion) {
   });
 }
 
+// Timeline draw-in line
+const timelineLine = document.getElementById('timelineLine');
+if (timelineLine && 'IntersectionObserver' in window) {
+  const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        timelineObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -10% 0px' });
+  timelineObserver.observe(timelineLine);
+}
+
+// Subtle hero parallax
+if (!prefersReducedMotion) {
+  const heroSection = document.querySelector('.hero');
+  let parallaxTicking = false;
+  function applyParallax() {
+    const offset = Math.min(window.scrollY * 0.15, 60);
+    heroSection.style.transform = `translateY(${-offset}px)`;
+    parallaxTicking = false;
+  }
+  if (heroSection) {
+    window.addEventListener('scroll', () => {
+      if (!parallaxTicking) {
+        requestAnimationFrame(applyParallax);
+        parallaxTicking = true;
+      }
+    }, { passive: true });
+  }
+}
+
 // Click-to-load video embed
 const videoEmbed = document.getElementById('videoEmbed');
 if (videoEmbed) {
