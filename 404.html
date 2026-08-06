@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Samyaad Kabir</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.ico" sizes="any">
+<meta name="theme-color" content="#0A0B0F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .not-found{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px;
+  }
+  .not-found .section-index{ margin-bottom: 18px; }
+  .not-found h1{
+    font-size: clamp(3rem, 10vw, 6rem);
+    margin: 0 0 12px;
+    line-height: 1;
+  }
+  .not-found p{
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin: 0 0 28px;
+  }
+</style>
+</head>
+<body>
+
+<div class="noise-bg" aria-hidden="true"></div>
+<div class="scroll-progress" style="width:100%"></div>
+
+<main class="container not-found">
+  <span class="section-index">(404)</span>
+  <h1>Page not found</h1>
+  <p>Whatever you were looking for isn't here. Let's get you back to something that exists.</p>
+  <a class="btn btn-primary" href="/portfolio/">Back to the homepage</a>
+</main>
+
+</body>
+</html>
