@@ -639,6 +639,12 @@ button:focus-visible{
   cursor: pointer;
   background: #000;
 }
+.video-embed--vertical{
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  padding-top: 177.78%;
+}
 .video-embed::before{ display: none; }
 .video-embed iframe{
   position: absolute;
